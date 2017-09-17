@@ -51,7 +51,7 @@
       {
         "file": "sentry-expo/upload-sourcemaps",
         "config": {
-          "organization": "juwan-wheatley",
+          "organization": "rohit-singh",
           "project": "pul",
           "authToken": "ba831e90c8b5421b907731c3bc77415161fa905c437e4572ae79ad2192886adc"
         }

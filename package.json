@@ -2,7 +2,7 @@
   "name": "pul",
   "version": "1.0.0",
   "description": "A Middle-Out Transportation Solution for Students on the Go.",
-  "author": "Juwan Wheatley",
+  "author": "Rohit Singh",
   "private": true,
   "main": "main.js",
   "scripts": {
