@@ -16,7 +16,7 @@ import colors from "kolors";
 import Collapsible from "react-native-collapsible";
 import moment from "moment";
 import ElevatedView from "fiber-react-native-elevated-view";
-import createLyftDeepLink from "../utils/createLyftDeepLink";
+//import createLyftDeepLink from "../utils/createLyftDeepLink";
 import filter from "../utils/filter";
 import { maybeOpenURL } from "react-native-app-link";
 import connectDropdownAlert from "../utils/connectDropdownAlert";
@@ -145,9 +145,7 @@ export default class Event extends Component {
           <CardLabel>
             {filter.clean(this.props.event.name.toUpperCase())}
           </CardLabel>
-          <CardSublabel>
-            {this.props.event.type.toUpperCase()}
-          </CardSublabel>
+          <CardSublabel>{this.props.event.type.toUpperCase()}</CardSublabel>
         </CardHeader>
         <View
           style={{
@@ -263,8 +261,8 @@ export default class Event extends Component {
             <TouchableOpacity
               disabled={
                 !this.props.event.availableRides ||
-                  this.isRider ||
-                  this.isDriver
+                this.isRider ||
+                this.isDriver
               }
               onPress={() => {
                 if (this.props.authStore.verified) {
@@ -285,17 +283,16 @@ export default class Event extends Component {
               style={[
                 styles.rideButton,
                 {
-                  backgroundColor: !this.props.event.availableRides ||
+                  backgroundColor:
+                    !this.props.event.availableRides ||
                     this.isRider ||
                     this.isDriver
-                    ? colors.disabledBlue
-                    : colors.blue
+                      ? colors.disabledBlue
+                      : colors.blue
                 }
               ]}
             >
-              <Text style={styles.rideButtonText}>
-                RIDE
-              </Text>
+              <Text style={styles.rideButtonText}>RIDE</Text>
             </TouchableOpacity>
             <TouchableOpacity
               disabled={this.isRider || this.isDriver}
@@ -318,15 +315,14 @@ export default class Event extends Component {
               style={[
                 styles.driveButton,
                 {
-                  backgroundColor: this.isRider || this.isDriver
-                    ? colors.disabledPurp
-                    : colors.purp
+                  backgroundColor:
+                    this.isRider || this.isDriver
+                      ? colors.disabledPurp
+                      : colors.purp
                 }
               ]}
             >
-              <Text style={styles.driveButtonText}>
-                DRIVE
-              </Text>
+              <Text style={styles.driveButtonText}>DRIVE</Text>
             </TouchableOpacity>
           </View>
           <Text style={styles.driversAvailable}>
@@ -335,7 +331,10 @@ export default class Event extends Component {
             {!this.isRider &&
               !this.isDriver &&
               this.props.event.availableRides > 0 &&
-              `${this.props.event.availableRides} driver${this.props.event.availableRides > 1 ? "s" : ""} available`.toUpperCase()}
+              `${this.props.event.availableRides} driver${this.props.event
+                .availableRides > 1
+                ? "s"
+                : ""} available`.toUpperCase()}
             {!this.isRider &&
               !this.isDriver &&
               !this.props.event.availableRides &&
@@ -343,39 +342,42 @@ export default class Event extends Component {
           </Text>
 
           {!this.isDriver &&
-            !this.isRider &&
-            <TouchableOpacity
-              onPress={() => {
-                createLyftDeepLink(this.props.event)
-                  .then(url => {
-                    maybeOpenURL(url, {
-                      appName: "Lyft",
-                      appStoreId: "id529379082",
-                      playStoreId: "me.lyft.android"
-                    }).catch(err => {
+            !this.isRider && (
+              <TouchableOpacity
+                onPress={() => {
+                  createLyftDeepLink(this.props.event)
+                    .then(url => {
+                      maybeOpenURL(url, {
+                        appName: "Lyft",
+                        appStoreId: "id529379082",
+                        playStoreId: "me.lyft.android"
+                      }).catch(err => {
+                        this.props.alertWithType(
+                          "error",
+                          "Error",
+                          err.toString()
+                        );
+                      });
+                    })
+                    .catch(err => {
                       this.props.alertWithType(
                         "error",
                         "Error",
                         err.toString()
                       );
                     });
-                  })
-                  .catch(err => {
-                    this.props.alertWithType("error", "Error", err.toString());
-                  });
-              }}
-              style={styles.lyftButton}
-            >
-              <Image
-                resizeMode="contain"
-                style={styles.lyftIcon}
-                source={require("pul/assets/images/lyft_logo_white.png")}
-              />
-              <Text style={styles.lyftButtonText}>
-                RIDE WITH LYFT
-              </Text>
-              <View />
-            </TouchableOpacity>}
+                }}
+                style={styles.lyftButton}
+              >
+                <Image
+                  resizeMode="contain"
+                  style={styles.lyftIcon}
+                  source={require("pul/assets/images/lyft_logo_white.png")}
+                />
+                <Text style={styles.lyftButtonText}>RIDE WITH LYFT</Text>
+                <View />
+              </TouchableOpacity>
+            )}
         </Collapsible>
       </ElevatedView>
     );

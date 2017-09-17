@@ -6,7 +6,7 @@ export const firebaseConfig = {
   messagingSenderId: ""
 };
 
-export const lyftClientId = "";
+//export const lyftClientId = "";
 
 export const googleApiKey = "";
 

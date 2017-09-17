@@ -213,7 +213,7 @@ export default class SettingsScreen extends Component {
           <TouchableOpacity
             onPress={() => {
               email(
-                ["datwheat@gmail.com"],
+                ["xyz@gmail.com"],
                 null,
                 null,
                 `PÜL Feedback <${this.props.authStore.userId}>`,

@@ -12,25 +12,25 @@
             "JOhedXcqPpbx8D29Ax3Ck0ppzzk2": false
           },
           "location": {
-            "address": "257 N. Duke St #A, York, PA 17401, USA",
+            "address": "CoEP, Wellesely Rd, Shivajinagar, Pune",
             "geometry": {
               "location": {
-                "lat": 39.96781000000001,
-                "lng": -76.72566499999999
+                "lat": 18.529406,
+                "lng": 73.856575
               },
               "viewport": {
                 "northeast": {
-                  "lat": 39.9691589802915,
-                  "lng": -76.72431601970848
+                  "lat": 18.529406,
+                  "lng": 73.856575
                 },
                 "southwest": {
-                  "lat": 39.9664610197085,
-                  "lng": -76.7270139802915
+                  "lat": 18.529406,
+                  "lng": 73.856575
                 }
               }
             }
           },
-          "name": "VR Happy Hour",
+          "name": "Hackathon 2.0",
           "rides": {
             "-Kf9QbfMBlr84iQqrW5I": {
               "driver": "dVlhxGGG5tdmHvw8fpBTmAFw4wA3",
@@ -40,12 +40,12 @@
               "passengers": {
                 "-Kf9SgXqayN1RUKEA9LD": {
                   "isPickedUp": false,
-                  "location": "Googleplex",
+                  "location": "Aundh",
                   "userUID": "LdrpN22KyzRWNIy9CpRLSN7MATU2"
                 },
                 "-KfAbCnr-hvmyNwTE2Vp": {
                   "isPickedUp": true,
-                  "location": "Googleplex",
+                  "location": "Ganeshkhind Rd",
                   "userUID": "DE14uLX7xFXpVvqfldcCGAdrJco1"
                 },
                 "-Kn68H8zMxzz9rElZ1u-": {
@@ -70,7 +70,7 @@
               "passengers": {
                 "-Kn_O-DcQxLHZej5Qaf8": {
                   "isPickedUp": false,
-                  "location": "1 Hacker Way",
+                  "location": "Baner",
                   "userUID": "yxOW4tKX56NaAjbN0Q7rpV6akbJ3"
                 }
               },
@@ -92,17 +92,27 @@
         }
       },
       "logoUrl": "https://firebasestorage.googleapis.com/v0/b/pulapp-80d33.appspot.com/o/Google_-G-_Logo.png?alt=media&token=f0b5497c-4f7c-4dd1-8b12-8ba650058a8c",
-      "name": "Demo School",
+      "name": "CoEP",
       "pickupLocations": [
         {
-          "lat": 37.4221527,
-          "lon": -122.0842991,
-          "name": "Googleplex"
+          "lat": 18.558007,
+          "lon": 73.807520,
+          "name": "Aundh"
         },
         {
-          "lat": 37.4845773,
-          "lon": -122.1478826,
-          "name": "1 Hacker Way"
+          "lat": 18.559658,
+          "lon": 73.779937,
+          "name": "Baner"
+        },
+        {
+          "lat": 18.535271,
+          "lon": 73.838350,
+          "name": "Ganeshkhind Rd"
+        },
+        {
+          "lat": 18.529406,
+          "lon": 73.856575,
+          "name": "CoEP"
         }
       ],
       "primaryColor": "#F4F4F4"
